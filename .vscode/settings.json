@@ -2,6 +2,7 @@
     "java.project.sourcePaths": [
         ".",
         "Week1_JavaBasic1",
-        "Week1_JavaBasic2"
+        "Week1_JavaBasic2",
+        "Week1_StringAndData"
     ]
 }
