@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class GradeAverage {
     public static void main(String[] args) {
+        Ownership.Introduction();
+
         Scanner input = new Scanner(System.in);
 
         System.out.print("English\t: ");
@@ -13,6 +15,6 @@ public class GradeAverage {
         input.close();
 
         double average = ((english + math + science) / 3);
-        System.out.println("Average\t: " + average);
+        System.out.println("Average\t: " + average + "\n");
     }
 }
