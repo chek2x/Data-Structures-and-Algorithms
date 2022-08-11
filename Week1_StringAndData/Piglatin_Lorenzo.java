@@ -50,10 +50,12 @@ public class Piglatin_Lorenzo {
                 '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', '|', '\\', ':', '"', ';', ',', '.', '/', '<', '>',
                 '?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
                 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
         if (word.contains(" ")) {
             System.out.println("\nError. Invalid input. Input only one word.\n");
             System.exit(0);
         }
+
         for (char x : ch) {
             for (char y : specialChar) {
                 if (x == y) {

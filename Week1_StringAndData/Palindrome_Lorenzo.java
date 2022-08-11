@@ -40,6 +40,7 @@ public class Palindrome_Lorenzo {
             System.out.println("\nError. Invalid input. Input only one word.\n");
             System.exit(0);
         }
+
         for (char x : ch) {
             for (char y : specialChar) {
                 if (x == y) {
