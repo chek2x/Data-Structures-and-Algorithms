@@ -14,6 +14,7 @@ public class Piglatin_Lorenzo {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter word\t: ");
         String word = input.nextLine();
+        input.close();
         invalidCheck(word);
         System.out.println("\nPig Latin\t: " + pigLatin(word));
     }
