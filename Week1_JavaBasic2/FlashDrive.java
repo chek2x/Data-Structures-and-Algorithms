@@ -26,5 +26,5 @@ public class FlashDrive {
 
         return ("Hi Mr. Lee, you have " + gross + " gross, " + dozen + " dozens, and " + extra
                 + " extra flash drives.\n");
-    }
+    } // End of flashDriveOutput()
 }
