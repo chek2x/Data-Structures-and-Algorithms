@@ -1,3 +1,9 @@
+/**
+ * @author Lorenzo, Zazheska D.
+ * @param CCIS - CS 2nd Year
+ * @param A221 - Data Structures and Algorithms (Paired)
+ */
+
 public class LinearSearching {
     public static void main(String[] args) {
         // int num[] = { 20, 30, 50, 100, 70, 30, 90, 15, 30, 40, 70, 150, 500, 1000, 1,

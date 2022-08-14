@@ -21,6 +21,7 @@ public class AreaCircumferenceCircle {
         double area = (pi * (r * r));
         double circumference = ((2 * pi) * r);
 
-        System.out.println("Area\t\t: " + area + "\nCircumference\t: " + circumference + "\n");
+        System.out.println("Area\t\t: " + area + "\nCircumference\t: "
+                + circumference + "\n");
     }
 }
