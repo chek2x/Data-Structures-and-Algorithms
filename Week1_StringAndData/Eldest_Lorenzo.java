@@ -20,9 +20,9 @@ public class Eldest_Lorenzo {
         int i = 0;
 
         ArrayList<ArrayList<String>> dogList = new ArrayList<>();
+        Scanner input = new Scanner(System.in);
 
         while (true) {
-            Scanner input = new Scanner(System.in);
             System.out.print("Enter dog's name\t: ");
             name = input.nextLine();
             System.out.print("Enter dog's species\t: ");
@@ -40,7 +40,7 @@ public class Eldest_Lorenzo {
                 continue;
             }
 
-            dogList.add(new ArrayList());
+            dogList.add(new ArrayList<>());
             dogList.get(i).add(name);
             dogList.get(i).add(species);
             dogList.get(i).add(sex);
@@ -57,6 +57,8 @@ public class Eldest_Lorenzo {
                 break;
             }
         }
+
+        input.close();
 
         for (int x = 0; x < dogList.size(); x++) {
             for (int y = x + 1; y < dogList.size(); y++) {
