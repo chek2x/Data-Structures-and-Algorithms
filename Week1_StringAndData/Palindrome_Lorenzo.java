@@ -28,7 +28,7 @@ public class Palindrome_Lorenzo {
         }
 
         return true;
-    }
+    } // End of isPalindrome()
 
     public static void invalidCheck(String word) {
         char[] ch = word.toCharArray();
@@ -49,5 +49,5 @@ public class Palindrome_Lorenzo {
                 }
             }
         }
-    }
+    } // End of invalidCheck()
 }
