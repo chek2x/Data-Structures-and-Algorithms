@@ -8,11 +8,13 @@ public class LORENZO {
     public static void main(String[] args) {
         Ownership.Introduction();
 
-        System.out.println("LL            OOOOOOOO     RRRRRRRRRRR");
-        System.out.println("LL          OOO       OO   RR        RR");
-        System.out.println("LL         OOO         OO  RR        RR");
-        System.out.println("LL         OOO         OO  RRRRRRRRRR");
-        System.out.println("LL          OOO       OO   RR       RR");
-        System.out.println("LLLLLLLLL     OOOOOOOO     RR        RR");
+        System.out.println("""
+                LL            OOOOOOOO     RRRRRRRRRRR
+                LL          OOO       OO   RR        RR
+                LL         OOO         OO  RR        RR
+                LL         OOO         OO  RRRRRRRRRR
+                LL          OOO       OO   RR       RR
+                LLLLLLLLL     OOOOOOOO     RR        RR
+                    """);
     }
 }
