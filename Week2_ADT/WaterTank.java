@@ -1,3 +1,9 @@
+/**
+ * @author Lorenzo, Zazheska D.
+ * @param CCIS - CS 2nd Year
+ * @param A221 - Data Structures and Algorithms (Paired)
+ */
+
 public class WaterTank {
     // properties-attribute, characteristics, data fields or data members
     private String name, brand, color, height;
