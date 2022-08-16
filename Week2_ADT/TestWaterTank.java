@@ -46,6 +46,7 @@ public class TestWaterTank {
                         }
                     }
                     break;
+
                 case "Remove Water":
                     if (tank.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Tank is empty", "Error", JOptionPane.ERROR_MESSAGE);
@@ -73,9 +74,11 @@ public class TestWaterTank {
                         }
                     }
                     break;
+
                 case "Clear tank":
                     JOptionPane.showMessageDialog(null, "Tank is empty. Wastage\t: " + tank.clearWater());
                     break;
+
                 case "Setup Tank":
                     if (!tank.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Tank not empty. Cannot change capacity.", "Error",
@@ -93,6 +96,7 @@ public class TestWaterTank {
                         JOptionPane.showMessageDialog(null, "Tank has been updated.");
                     }
                     break;
+
                 case "End":
             } // end of switch
         } while (!choice.equals("End"));
