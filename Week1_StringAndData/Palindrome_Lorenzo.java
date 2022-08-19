@@ -46,7 +46,7 @@ public class Palindrome_Lorenzo {
         for (char x : ch) {
             for (char y : specialChar) {
                 if (x == y) {
-                    System.out.println("\nError. Invalid input. Remove special character or uppercase letter.\n");
+                    System.out.println("\nError. Invalid input. Remove any numerical values within the input.\n");
                     return true;
                 }
             }
