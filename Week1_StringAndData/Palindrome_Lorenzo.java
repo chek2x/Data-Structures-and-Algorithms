@@ -32,11 +32,9 @@ public class Palindrome_Lorenzo {
 
     public static void invalidCheck(String word) {
         char[] ch = word.toCharArray();
-        char[] specialChar = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*',
-                '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', '|', '\\', ':', '"', ';', ',', '.', '/', '<', '>',
-                '?' };
+        char[] specialChar = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
 
-        if (word.contains(" ")) {
+        if (word.contains(" ") || word.length() <= 0) {
             System.out.println("\nError. Invalid input. Input only one word.\n");
             System.exit(0);
         }
