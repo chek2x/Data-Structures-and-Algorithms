@@ -12,10 +12,14 @@ public class Piglatin_Lorenzo {
         Ownership.Introduction();
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter word\t: ");
-        String word = input.nextLine();
+        String word;
+
+        do {
+            System.out.print("Enter word\t: ");
+            word = input.nextLine();
+        } while (invalidCheck(word));
+
         input.close();
-        invalidCheck(word);
         System.out.println("\nPig Latin\t: " + pigLatin(word));
     }
 
@@ -44,7 +48,12 @@ public class Piglatin_Lorenzo {
         return word;
     }
 
-    public static void invalidCheck(String word) {
+    /**
+     * 
+     * @param word - String to check if valid as an input.
+     * @return true if word is invalid, false otherwise.
+     */
+    public static boolean invalidCheck(String word) {
         char[] ch = word.toCharArray();
         char[] specialChar = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*',
                 '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', '|', '\\', ':', '"', ';', ',', '.', '/', '<', '>',
@@ -53,22 +62,23 @@ public class Piglatin_Lorenzo {
 
         if (word.contains(" ")) {
             System.out.println("\nError. Invalid input. Input only one word.\n");
-            System.exit(0);
+            return true;
         }
 
         for (char x : ch) {
             for (char y : specialChar) {
                 if (x == y) {
                     System.out.println("\nError. Invalid input. Remove special character or uppercase letter.\n");
-                    System.exit(0);
+                    return true;
                 }
             }
         }
 
         if (word.length() < 3 || word.length() > 10) {
             System.out.println("\nError. Invalid input. Minimum of 3 letters and maximum of 10.\n");
-            System.exit(0);
+            return true;
         }
 
+        return false;
     }
 }
