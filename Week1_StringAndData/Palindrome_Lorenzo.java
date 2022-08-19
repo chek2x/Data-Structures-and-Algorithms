@@ -17,7 +17,6 @@ public class Palindrome_Lorenzo {
         do {
             System.out.print("Enter String\t: ");
             word = input.nextLine();
-            input.close();
         } while (invalidCheck(word));
 
         input.close();
