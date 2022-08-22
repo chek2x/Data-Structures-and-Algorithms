@@ -32,7 +32,7 @@ public class TestNumberManipulation {
                 System.out.print("Enter element " + (i + 1) + ": ");
                 arr[i] = input.nextDouble();
 
-                if (arr[i] < 0) {
+                if (arr[i] < 0 || arr[i] > 1000) {
                     System.out.println("Invalid element. Try again.\n");
                     continue;
                 }
@@ -40,17 +40,19 @@ public class TestNumberManipulation {
                 i++;
             }
 
-            System.out.print("\nYour array sorted: ");
+            System.out.print("\n\nYour array sorted: ");
             NumberManipulation.sort(arr);
             for (i = 0; i < len; i++) {
                 System.out.print(arr[i] + " ");
             }
-            System.out.println("\nHighest Value\t\t: " + NumberManipulation.max(arr));
+            System.out.println("\n\nHighest Value\t\t: " + NumberManipulation.max(arr));
             System.out.println("Highest Even Value\t: " + NumberManipulation.maxEven(arr));
             System.out.println("Highest Odd Value\t: " + NumberManipulation.maxOdd(arr));
             System.out.println("Lowest Value\t\t: " + NumberManipulation.min(arr));
             System.out.println("Lowest Even Value\t: " + NumberManipulation.minEven(arr));
-            System.out.println("Lowest Odd Value\t: " + NumberManipulation.minOdd(arr));
+            System.out.println("Lowest Odd Value\t: " + NumberManipulation.minOdd(arr) + "\n");
+
+            NumberManipulation.executionTimes();
 
             input.close();
             break;
