@@ -5,7 +5,11 @@
  */
 
 public class SortingAlgorithm_Lorenzo {
+    private long sortTime;
+
     public String bubbleSort(int num[], int choice) {
+        long startTime = System.nanoTime();
+
         int temp;
         String str = "";
 
@@ -51,10 +55,15 @@ public class SortingAlgorithm_Lorenzo {
                 break;
         }
 
+        long endTime = System.nanoTime();
+        sortTime = endTime - startTime;
+
         return str;
     }
 
     public String insertionSort(int num[], int choice) {
+        long startTime = System.nanoTime();
+
         int key;
         int j;
         String str = "\n1. ";
@@ -109,10 +118,15 @@ public class SortingAlgorithm_Lorenzo {
                 break;
         }
 
+        long endTime = System.nanoTime();
+        sortTime = endTime - startTime;
+
         return str;
     }
 
     public String selectionSort(int num[], int choice) {
+        long startTime = System.nanoTime();
+
         int temp;
         int min;
         String str = "\n1. ";
@@ -169,10 +183,13 @@ public class SortingAlgorithm_Lorenzo {
                 break;
         }
 
+        long endTime = System.nanoTime();
+        sortTime = endTime - startTime;
+
         return str;
     }
 
     public void processTimes() {
-
+        System.out.println("Processing Time: " + sortTime + " units\n");
     }
 }

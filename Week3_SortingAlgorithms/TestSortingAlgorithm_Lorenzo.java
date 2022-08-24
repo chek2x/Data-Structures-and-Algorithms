@@ -75,8 +75,8 @@ public class TestSortingAlgorithm_Lorenzo {
                     System.out.print("Choice\t: ");
                     next = input.next();
                     try {
-                        System.out
-                                .println("\nBubble Sort: " + sort.bubbleSort(array, Integer.parseInt(next)) + "\n");
+                        System.out.println("\nBubble Sort: " + sort.bubbleSort(array, Integer.parseInt(next)) + "\n");
+                        sort.processTimes();
                         break;
                     } catch (NumberFormatException e) {
                         System.out.println("Error. Please input integer.\n");
@@ -97,9 +97,9 @@ public class TestSortingAlgorithm_Lorenzo {
                     System.out.print("Choice\t: ");
                     next = input.next();
                     try {
-                        System.out
-                                .println("\nInsertion Sort: " + sort.insertionSort(array, Integer.parseInt(next))
-                                        + "\n");
+                        System.out.println(
+                                "\nInsertion Sort: " + sort.insertionSort(array, Integer.parseInt(next)) + "\n");
+                        sort.processTimes();
                         break;
                     } catch (NumberFormatException e) {
                         System.out.println("Error. Please input integer.\n");
@@ -120,9 +120,9 @@ public class TestSortingAlgorithm_Lorenzo {
                     System.out.print("Choice\t: ");
                     next = input.next();
                     try {
-                        System.out
-                                .println("\nSelection Sort: " + sort.selectionSort(array, Integer.parseInt(next))
-                                        + "\n");
+                        System.out.println(
+                                "\nSelection Sort: " + sort.selectionSort(array, Integer.parseInt(next)) + "\n");
+                        sort.processTimes();
                         break;
                     } catch (NumberFormatException e) {
                         System.out.println("Error. Please input integer.\n");
