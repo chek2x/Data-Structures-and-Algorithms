@@ -11,7 +11,11 @@ public class SortingAlgorithm_Lorenzo {
         long startTime = System.nanoTime();
 
         int temp;
-        String str = "";
+        String str = "\n1. ";
+
+        for (int x = 0; x < num.length; x++) {
+            str += Integer.toString(num[x]) + " ";
+        }
 
         switch (choice) {
             case 0: // Ascending
@@ -26,7 +30,7 @@ public class SortingAlgorithm_Lorenzo {
 
                     for (int x = 0; x < num.length; x++) {
                         if (x == 0) {
-                            str = str + "\n" + Integer.toString(i + 1) + ". ";
+                            str = str + "\n" + Integer.toString(i + 2) + ". ";
                         }
                         str += Integer.toString(num[x]) + " ";
                     }
@@ -109,7 +113,7 @@ public class SortingAlgorithm_Lorenzo {
 
                     for (int x = 0; x < num.length; x++) {
                         if (x == 0) {
-                            str = str + "\n" + Integer.toString(i) + ". ";
+                            str = str + "\n" + Integer.toString(i + 1) + ". ";
                         }
                         str += Integer.toString(num[x]) + " ";
                     }
@@ -151,7 +155,7 @@ public class SortingAlgorithm_Lorenzo {
 
                     for (int x = 0; x < num.length; x++) {
                         if (x == 0) {
-                            str = str + "\n" + Integer.toString(i + 1) + ". ";
+                            str = str + "\n" + Integer.toString(i + 2) + ". ";
                         }
                         str += Integer.toString(num[x]) + " ";
                     }
