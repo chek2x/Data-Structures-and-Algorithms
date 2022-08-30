@@ -4,7 +4,7 @@
  * @param A221 - Data Structures and Algorithms (Paired)
  */
 
-public class LORENZO {
+public class Lorenzo {
     public static void main(String[] args) {
         Ownership.Introduction();
 
