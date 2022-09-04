@@ -15,7 +15,7 @@ public class TestStack {
         String menu[] = { "Push", "Pop", "Set Capacity", "Search", "Clear", "Exit" };
         String option = "", all = "";
         Stack st = new Stack(2);
-        int data = 0;
+        int data = 0, capacity = 0;
 
         try {
             do {
@@ -32,7 +32,12 @@ public class TestStack {
                     case "Push":
                         if (!st.isFull()) {
                             try {
-                                data = Integer.parseInt(JOptionPane.showInputDialog("Push: "));
+                                String input = JOptionPane.showInputDialog("Push: ");
+                                if (input == null) {
+                                    break;
+                                }
+
+                                data = Integer.parseInt(input);
 
                                 if (st.contains(data)) {
                                     JOptionPane.showMessageDialog(null, "That element already exists.");
@@ -63,11 +68,19 @@ public class TestStack {
                             JOptionPane.showMessageDialog(null, "Stack has values at current.");
                             break;
                         } else {
-                            int capacity = Integer.parseInt(JOptionPane.showInputDialog("Set Capacity: "));
-                            if (Integer.toString(capacity) == null) {
+                            try {
+                                String input = JOptionPane.showInputDialog("Set Capacity: ");
+                                if (input == null) {
+                                    break;
+                                }
+                                capacity = Integer.parseInt(input);
+                            } catch (NumberFormatException e) {
+                                JOptionPane.showMessageDialog(null, "That is not a valid input.");
                                 break;
                             }
+
                             st.setCapacity(capacity);
+                            JOptionPane.showMessageDialog(null, "Successfully updated capacity to " + capacity + ".");
                         }
                         break;
 
@@ -76,7 +89,12 @@ public class TestStack {
                             JOptionPane.showMessageDialog(null, "Stack is empty.");
                         } else {
                             try {
-                                data = Integer.parseInt(JOptionPane.showInputDialog("Push: "));
+                                String input = JOptionPane.showInputDialog("Search: ");
+                                if (input == null) {
+                                    break;
+                                }
+
+                                data = Integer.parseInt(input);
                             } catch (NumberFormatException e) {
                                 JOptionPane.showMessageDialog(null, "That is not a valid input.");
                                 break;

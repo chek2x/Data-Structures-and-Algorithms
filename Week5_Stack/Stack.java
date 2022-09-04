@@ -131,7 +131,7 @@ public class Stack {
                 return true;
             }
         }
-        found = data + " not found";
+        found = data + " not found.";
         return false;
     }
 
