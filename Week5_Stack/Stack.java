@@ -109,18 +109,10 @@ public class Stack {
         }
     }
 
-    public void search(int data) {
+    public boolean search(int data) {
         for (int i = 0; i <= top + 1; i++) {
             if (data == num[i]) {
-                return data + " is at position " + (i + 1);
-            }
-        }
-        return data + " not found";
-    }
-
-    public boolean contains(int data) {
-        for (int i = 0; i <= top + 1; i++) {
-            if (data == num[i]) {
+                found = data + " is at position " + (i + 1);
                 return true;
             }
         }
