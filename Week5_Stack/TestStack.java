@@ -6,6 +6,8 @@
 
 public class TestStack {
     public static void main(String[] args) {
+        Ownership.Introduction();
+
         Stack st = new Stack(3);
         System.out.println(st.getCapacity());
         System.out.println(st.peek());
