@@ -1,3 +1,8 @@
+/**
+ * @author Lorenzo, Zazheska D.
+ * @param CCIS - CS 2nd Year
+ * @param A221 - Data Structures and Algorithms (Paired)
+ */
 
 public class TestStack {
     public static void main(String[] args) {
