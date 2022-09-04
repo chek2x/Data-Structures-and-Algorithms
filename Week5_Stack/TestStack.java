@@ -64,6 +64,9 @@ public class TestStack {
                             break;
                         } else {
                             int capacity = Integer.parseInt(JOptionPane.showInputDialog("Set Capacity: "));
+                            if (Integer.toString(capacity) == null) {
+                                break;
+                            }
                             st.setCapacity(capacity);
                         }
                         break;
