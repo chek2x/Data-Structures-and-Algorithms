@@ -6,7 +6,7 @@
 
 public class Stack {
     private int num[], top, capacity;
-    public String found;
+    private String found;
 
     public Stack() {
         top = -1;
@@ -46,6 +46,10 @@ public class Stack {
         return top + 1;
     }
 
+    public int count() {
+        return top + 1;
+    }
+
     public boolean isEmpty() {
         return (top <= -1);
     }
@@ -56,7 +60,7 @@ public class Stack {
 
     public int peek() {
         if (isEmpty()) {
-            System.err.print("Stack is empty");
+            System.err.println("Stack is empty");
             return -1;
         } else {
             return num[top];
@@ -65,7 +69,6 @@ public class Stack {
 
     public int first() {
         if (isEmpty()) {
-            System.err.println("Stack is empty");
             return -1;
         } else {
             return num[0];
@@ -106,9 +109,21 @@ public class Stack {
         return hold;
     }
 
+    public String elements() {
+        String hold = "";
+        if (!isEmpty()) {
+            for (int i = 0; i <= top; i++) {
+                hold += num[i] + " ";
+            }
+        } else {
+            hold = "Stack is empty";
+        }
+
+        return hold;
+    }
+
     public int last() {
         if (isEmpty()) {
-            System.err.print("Stack is empty");
             return -1;
         } else {
             return num[top];
@@ -116,19 +131,20 @@ public class Stack {
     }
 
     public boolean search(int data) {
-        for (int i = 0; i <= top + 1; i++) {
+        for (int i = 0; i <= top; i++) {
             if (data == num[i]) {
                 found = data + " is at position " + (i + 1);
                 return true;
             }
         }
+        found = data + " not found";
         return false;
     }
 
-    public void clear() {
+    public String clear() {
         top = -1;
         num = new int[capacity];
-        System.out.println("Stack is now empty");
+        return "Stack is now empty";
     }
 
     public String empty() {
@@ -145,5 +161,9 @@ public class Stack {
         } else {
             return "No";
         }
+    }
+
+    public String getFound() {
+        return found;
     }
 }
