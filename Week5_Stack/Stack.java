@@ -21,13 +21,9 @@ public class Stack {
     }
 
     public void setCapacity(int capacity) {
-        if (!isEmpty()) {
-            System.err.println("Stack has values at current");
-        } else {
-            top = -1;
-            this.capacity = capacity;
-            num = new int[capacity];
-        }
+        top = -1;
+        this.capacity = capacity;
+        num = new int[capacity];
     }
 
     public int getCapacity() {
@@ -60,7 +56,6 @@ public class Stack {
 
     public int peek() {
         if (isEmpty()) {
-            System.err.println("Stack is empty");
             return -1;
         } else {
             return num[top];
@@ -76,23 +71,13 @@ public class Stack {
     }
 
     public void push(int data) {
-        if (isFull()) {
-            System.err.println("Stack is full");
-        } else {
-            top++;
-            num[top] = data;
-        }
+        top++;
+        num[top] = data;
     }
 
     public int pop() {
-        int val = 0;
-
-        if (isEmpty()) {
-            System.out.println("Stack is empty");
-        } else {
-            val = num[top];
-            top--;
-        }
+        int val = num[top];
+        top--;
         return val;
     }
 
@@ -130,10 +115,19 @@ public class Stack {
         }
     }
 
+    public boolean contains(int data) {
+        for (int i = 0; i <= top; i++) {
+            if (data == num[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean search(int data) {
         for (int i = 0; i <= top; i++) {
             if (data == num[i]) {
-                found = data + " is at position " + (i + 1);
+                found = data + " is at position " + (i + 1) + ".";
                 return true;
             }
         }
@@ -144,7 +138,7 @@ public class Stack {
     public String clear() {
         top = -1;
         num = new int[capacity];
-        return "Stack is now empty";
+        return "Stack is now empty.";
     }
 
     public String empty() {
