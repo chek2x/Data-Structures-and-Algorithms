@@ -23,6 +23,28 @@ public class Queue {
         front = rear = -1;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int size() {
+        return rear + 1;
+    }
+
+    public int last() {
+        if (isEmpty()) {
+            return 0;
+        }
+        return num[rear];
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            return 0;
+        }
+        return num[front];
+    }
+
     public boolean isEmpty() {
         return rear <= -1;
     }
@@ -36,28 +58,19 @@ public class Queue {
     }
 
     public void enqueue(int data) {
-        if (isFull()) {
-            errorMessage("Queue is Full!");
-        } else {
-            num[++rear] = data;
-            front = 0;
-        }
+        num[++rear] = data;
+        front = 0;
     }
 
     public int dequeue() {
         int val = 0;
-        if (isEmpty()) {
-            errorMessage("Queue is empty!");
-            front = -1;
-        } else {
-            val = num[front];
+        val = num[front];
 
-            for (int i = 0; i < rear; i++) {
-                num[i] = num[i + 1];
-            }
-
-            rear--;
+        for (int i = 0; i < rear; i++) {
+            num[i] = num[i + 1];
         }
+
+        rear--;
 
         return val;
     }
