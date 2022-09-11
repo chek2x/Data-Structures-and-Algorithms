@@ -5,8 +5,6 @@
  * @param A221 - Data Structures and Algorithms (Paired)
  */
 
-import javax.swing.JOptionPane;
-
 public class Queue {
     private int num[];
     private int front, rear, capacity;
@@ -51,10 +49,6 @@ public class Queue {
 
     public boolean isFull() {
         return rear >= capacity - 1;
-    }
-
-    private void errorMessage(String msg) {
-        JOptionPane.showMessageDialog(null, msg, "Full", JOptionPane.ERROR_MESSAGE);
     }
 
     public void enqueue(int data) {
