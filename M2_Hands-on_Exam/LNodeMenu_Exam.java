@@ -8,11 +8,12 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class LNodeMenu {
+public class LNodeMenu2 {
     public static void main(String[] args) {
         Ownership.Introduction();
 
-        String menu[] = { "Add At First", "Add At Position", "Add At Last", "Delete At First", "Delete At Position",
+        String menu[] = { "Add At First", "Add At Position", "Add In Middle", "Add At Last", "Delete At First",
+                "Delete At Position", "Delete In Middle",
                 "Delete Value",
                 "Delete At Last", "Get First", "Get At Position", "Get Last", "Search", "Edit", "Exit" };
         String option = "", all = "";
@@ -80,7 +81,6 @@ public class LNodeMenu {
                             JOptionPane.showMessageDialog(null, "Invalid input.", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                         value.setText("");
-                        position.setText("");
                         break;
 
                     case "Add At Position":
@@ -129,6 +129,34 @@ public class LNodeMenu {
                         }
                         value.setText("");
                         position.setText("");
+                        break;
+
+                    case "Add In Middle":
+                        try {
+                            JOptionPane.showConfirmDialog(null, valueOnly, option, JOptionPane.OK_CANCEL_OPTION);
+
+                            inputVal = Integer.parseInt(value.getText());
+                            if (value.getText() == null || value.getText() == "") {
+                                JOptionPane.showMessageDialog(null, "Invalid input.", "Error",
+                                        JOptionPane.ERROR_MESSAGE);
+                                break;
+                            } else if (myNode.contains(inputVal)) {
+                                JOptionPane.showMessageDialog(null, "Element already exists.", "Error",
+                                        JOptionPane.ERROR_MESSAGE);
+                                break;
+                            } else if (inputVal <= 0) {
+                                JOptionPane.showMessageDialog(null, "Invalid input.", "Error",
+                                        JOptionPane.ERROR_MESSAGE);
+                                break;
+                            }
+
+                            myNode.addInMiddle(inputVal);
+                            JOptionPane.showMessageDialog(null, "Element added to first.", option,
+                                    JOptionPane.INFORMATION_MESSAGE);
+                        } catch (NumberFormatException e) {
+                            JOptionPane.showMessageDialog(null, "Invalid input.", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                        value.setText("");
                         break;
 
                     case "Add At Last":
@@ -200,6 +228,9 @@ public class LNodeMenu {
                         position.setText("");
                         break;
 
+                    case "Delete In Middle":
+                        break;
+
                     case "Delete At Last":
                         if (myNode.isEmpty()) {
                             JOptionPane.showMessageDialog(null, "List is empty.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -259,7 +290,7 @@ public class LNodeMenu {
                                 break;
                             }
 
-                            JOptionPane.showMessageDialog(null, myNode.where(inputVal), option,
+                            JOptionPane.showMessageDialog(null, myNode.indexAt(inputVal), option,
                                     JOptionPane.INFORMATION_MESSAGE);
                         } catch (NumberFormatException e) {
                             JOptionPane.showMessageDialog(null, "Invalid input.", "Error", JOptionPane.ERROR_MESSAGE);

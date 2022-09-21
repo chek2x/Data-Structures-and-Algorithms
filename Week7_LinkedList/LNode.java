@@ -5,7 +5,7 @@
  */
 
 public class LNode {
-    private int data;
+    private Object data;
     private LNode head, next;
     String hold = "";
 
@@ -17,7 +17,7 @@ public class LNode {
         return head == null;
     }
 
-    public void addAtFirst(int data) {
+    public void addAtFirst(Object data) {
         LNode newNode = new LNode();
         if (isEmpty()) {
             newNode.data = data;
@@ -44,7 +44,7 @@ public class LNode {
         return "head-> " + hold + " " + link;
     }
 
-    public void addAtLast(int data) {
+    public void addAtLast(Object data) {
         if (isEmpty()) {
             addAtFirst(data);
         } else {
@@ -59,7 +59,44 @@ public class LNode {
         }
     }
 
-    public void addAtPosition(int data, int position) {
+    public void addAtPosition(Object data, int position) {
+        if (isEmpty()) {
+            addAtFirst(data);
+        } else if (position == 1) {
+            addAtFirst(data);
+        } else if (position > currentSize()) {
+            addAtLast(data);
+        } else if (position <= 0 || position > currentSize()) {
+            System.out.println("Position is NOT valid.");
+        } else {
+            LNode visit, link;
+            visit = link = head;
+            int ctr = 1;
+            while (ctr != position) {
+                visit = visit.next;
+                ctr++;
+            }
+
+            while (link.next != visit) {
+                link = link.next;
+            }
+
+            LNode newNode = new LNode();
+            newNode.data = data;
+            newNode.next = visit;
+            link.next = newNode;
+        }
+    }
+
+    public void addInMiddle(Object data) {
+        int position = 0;
+
+        if (currentSize() % 2 == 0) {
+            position = (currentSize() / 2) + 1;
+        } else if (currentSize() % 2 == 1) {
+            position = (currentSize() / 2) + 2;
+        }
+
         if (isEmpty()) {
             addAtFirst(data);
         } else if (position == 1) {
@@ -164,7 +201,46 @@ public class LNode {
         }
     }
 
-    public boolean contains(int data) {
+    public void deleteInMiddle() {
+        int position = 0;
+        if (currentSize() % 2 == 0) {
+            position = (currentSize() / 2);
+        } else if (currentSize() % 2 == 1) {
+            position = (currentSize() / 2) + 1;
+        }
+
+        if (isEmpty()) {
+            System.out.println("List is empty.");
+        } else if (position == 1) {
+            deleteAtFirst();
+        } else if (position <= 0 || position > currentSize() + 1) {
+            System.out.println(position + " is NOT valid.");
+        } else {
+            LNode visit, link, pointer;
+            visit = link = pointer = head;
+
+            int ctr = 1;
+
+            while (ctr != position) {
+                visit = visit.next;
+                ctr++;
+            }
+
+            while (link.next != visit) {
+                link = link.next;
+            }
+
+            ctr = 1;
+            while (ctr != position + 1) {
+                pointer = pointer.next;
+                ctr++;
+            }
+
+            link.next = pointer;
+        }
+    }
+
+    public boolean contains(Object data) {
         boolean found = false;
         if (!isEmpty()) {
             LNode link = head;
@@ -182,7 +258,7 @@ public class LNode {
         return found;
     }
 
-    public String where(int data) {
+    public String indexAt(Object data) {
         int ctr = 1;
         if (isEmpty()) {
             return "List is empty.";
@@ -190,7 +266,7 @@ public class LNode {
             LNode link = head;
 
             while (link != null) {
-                if (link.data == data) {
+                if (link.data.equals(data)) {
                     return data + " is found in position " + ctr + ".";
                 } else {
                     link = link.next;
@@ -237,7 +313,7 @@ public class LNode {
         }
     }
 
-    public String deleteValue(int data) {
+    public String deleteValue(Object data) {
         int pos = 1;
         LNode link = head;
 
@@ -245,7 +321,7 @@ public class LNode {
             return "List is empty.";
         } else {
             while (link != null) {
-                if (link.data == data) {
+                if (link.data.equals(data)) {
                     deleteAtPosition(pos);
                     return data + " successfully deleted.";
                 } else {
