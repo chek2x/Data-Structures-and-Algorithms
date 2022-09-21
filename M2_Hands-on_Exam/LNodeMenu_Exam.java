@@ -8,7 +8,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class LNodeMenu2 {
+public class LNodeMenu_Exam {
     public static void main(String[] args) {
         Ownership.Introduction();
 

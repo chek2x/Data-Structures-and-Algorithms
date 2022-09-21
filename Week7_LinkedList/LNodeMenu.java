@@ -72,6 +72,8 @@ public class LNodeMenu extends JFrame implements ActionListener, ItemListener, K
     }
 
     public static void main(String[] args) {
+        Ownership.Introduction();
+
         new LNodeMenu();
     }
 
