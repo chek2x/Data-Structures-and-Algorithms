@@ -1,3 +1,10 @@
+
+/**
+ * @author Lorenzo, Zazheska D.
+ * @param CCIS - CS 2nd Year
+ * @param A221 - Data Structures and Algorithms (Paired)
+ */
+
 import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
@@ -52,6 +59,8 @@ public class BTNodeMenu extends JFrame implements ActionListener, ItemListener, 
     }
 
     public static void main(String[] args) {
+        Ownership.Introduction();
+
         new BTNodeMenu();
     }
 
@@ -60,16 +69,20 @@ public class BTNodeMenu extends JFrame implements ActionListener, ItemListener, 
         int value = Integer.parseInt(txtValue.getText());
 
         if (i == 0) {
-            tree.addNode(value);
+            if (tree.search(value) == true) {
+                JOptionPane.showMessageDialog(null, value + " is already in the tree.", "Search",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                tree.addNode(value);
+            }
         } else if (i == 1) {
             tree.deleteLast();
         } else if (i == 2) {
-            int toSearch = Integer.parseInt(txtValue.getText());
-            if (tree.search(toSearch) == true) {
-                JOptionPane.showMessageDialog(null, toSearch + " is in the tree.", "Search",
+            if (tree.search(value) == true) {
+                JOptionPane.showMessageDialog(null, value + " is in the tree.", "Search",
                         JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(null, toSearch + " is not found.", "Search", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, value + " is not found.", "Search", JOptionPane.ERROR_MESSAGE);
             }
         } else if (i == 3) {
             tree.clear();

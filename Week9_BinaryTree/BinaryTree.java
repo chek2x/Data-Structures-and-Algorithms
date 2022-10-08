@@ -283,10 +283,26 @@ public class BinaryTree {
     }
 
     public String treeType() {
-        if (count() / 2 == 0) {
-            return "Complete Binary Tree";
+        if (isEmpty()) {
+            return "Empty";
+        } else if (treeType(root) == true) {
+            return "Complete";
+        } else {
+            return "Full";
         }
-        return "Full Binary Tree";
+    }
+
+    private boolean treeType(Node node) {
+        if (node == null)
+            return true;
+
+        if (node.getLeft() == null && node.getRight() == null)
+            return true;
+
+        if ((node.getLeft() != null) && (node.getRight() != null))
+            return (treeType(node.getLeft()) && treeType(node.getRight()));
+
+        return false;
     }
 
     public int height() {
