@@ -55,7 +55,11 @@ public class BinaryTree {
         return root;
     }
 
-    public String printLevelOrder(Node node) {
+    public String printLevelOrder() {
+        return printLevelOrder(root);
+    }
+
+    private String printLevelOrder(Node node) {
         String hold = "";
         if (isEmpty()) {
             hold = "Tree is empty";
@@ -75,5 +79,20 @@ public class BinaryTree {
             }
         }
         return hold;
+    }
+
+    public int count() {
+        return count(root);
+    }
+
+    private int count(Node node) {
+        if (node == null) {
+            return 0;
+        } else {
+            int ctr = 1;
+            ctr += count(node.getLeft());
+            ctr += count(node.getRight());
+            return ctr;
+        }
     }
 }
