@@ -129,11 +129,18 @@ public class BTNodeMenu extends JFrame implements ActionListener, ItemListener, 
     }
 
     void display() {
-        traversal = "Level Order\t: " + tree.printLevelOrder() + "\nInorder\t: " + tree.printInOrder() + "\nPreorder\t: " + tree.printPreOrder() + "\nPostorder\t: " + tree.printPostOrder() + "\nInternal Nodes\t: " + tree.printParents() + "\nLeaves\t: " tree.printLeaves();
+        traversal = "Level Order\t: " + tree.printLevelOrder() +
+                  "\nInorder\t: " + tree.printInOrder() +
+                  "\nPreorder\t: " + tree.printPreOrder() +
+                  "\nPostorder\t: " + tree.printPostOrder() +
+                  "\nInternal Nodes\t: " + tree.printParents() +
+                  "\nLeaves\t: " tree.printLeaves();
 
         txtAreaDown.setText(traversal);
 
-        hold = "Empty\t: " + tree.isEmpty() + "\tCurrent Nodes\t: " + tree.count() + "\nDepth\t: " + tree.depth() + "\tHeight\t: " + tree.height() + "\nLevel\t: " + tree.level() + "\tType\t: " + tree.treeType();
+        hold = "Empty\t: " + tree.isEmpty() + "\tCurrent Nodes\t: " + tree.count() +
+             "\nDepth\t: " + tree.depth() + "\tHeight\t: " + tree.height() +
+             "\nLevel\t: " + tree.level() + "\tType\t: " + tree.treeType();
 
         txtAreaUp.setText(hold);
     }
