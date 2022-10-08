@@ -13,6 +13,9 @@ public class TestBinaryTree {
         System.out.println("Empty\t\t: " + tree.isEmpty());
         System.out.println("Number of Nodes\t: " + tree.count());
         System.out.println("Level Order\t: " + tree.printLevelOrder());
+        System.out.println("In-Order\t: " + tree.printInOrder());
+        System.out.println("Preorder\t: " + tree.printPreOrder());
+        System.out.println("Postorder\t: " + tree.printPostOrder());
 
         tree.addNode(12);
         tree.addNode(40);
@@ -21,6 +24,9 @@ public class TestBinaryTree {
         System.out.println("Empty\t\t: " + tree.isEmpty());
         System.out.println("Number of Nodes\t: " + tree.count());
         System.out.println("Level Order\t: " + tree.printLevelOrder());
+        System.out.println("In Order\t: " + tree.printInOrder());
+        System.out.println("Preorder\t: " + tree.printPreOrder());
+        System.out.println("Postorder\t: " + tree.printPostOrder());
 
         tree.addNode(25);
         tree.addNode(30);
@@ -29,5 +35,18 @@ public class TestBinaryTree {
         System.out.println("Empty\t\t: " + tree.isEmpty());
         System.out.println("Number of Nodes\t: " + tree.count());
         System.out.println("Level Order\t: " + tree.printLevelOrder());
+        System.out.println("In Order\t: " + tree.printInOrder());
+        System.out.println("Preorder\t: " + tree.printPreOrder());
+        System.out.println("Postorder\t: " + tree.printPostOrder());
+
+        tree.deleteLast();
+        System.out.println("---After Deleting Last Node---");
+        System.out.println("Empty\t\t: " + tree.isEmpty());
+        System.out.println("Number of Nodes\t: " + tree.count());
+        System.out.println("Level Order\t: " + tree.printLevelOrder());
+        System.out.println("In Order\t: " + tree.printInOrder());
+        System.out.println("Preorder\t: " + tree.printPreOrder());
+        System.out.println("Postorder\t: " + tree.printPostOrder());
+
     }
 }
