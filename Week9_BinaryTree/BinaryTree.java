@@ -281,4 +281,11 @@ public class BinaryTree {
             }
         }
     }
+
+    public String treeType() {
+        if (count() / 2 == 0) {
+            return "Complete Binary Tree";
+        }
+        return "Full Binary Tree";
+    }
 }

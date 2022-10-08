@@ -40,7 +40,8 @@ public class TestBinaryTree {
         System.out.println("Postorder\t: " + tree.printPostOrder());
 
         tree.deleteLast();
-        System.out.println("---After Deleting Last Node---");
+        tree.deleteLast();
+        System.out.println("---After Deleting Last 2 Nodes---");
         System.out.println("Empty\t\t: " + tree.isEmpty());
         System.out.println("Number of Nodes\t: " + tree.count());
         System.out.println("Level Order\t: " + tree.printLevelOrder());
