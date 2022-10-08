@@ -23,6 +23,10 @@ public class BinaryTree {
         return root;
     }
 
+    public void addNode(int data) {
+        root = add(root, data);
+    }
+
     private Node add(Node node, int data) {
         if (isEmpty()) {
             root = new Node(data);
