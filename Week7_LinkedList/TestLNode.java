@@ -1,3 +1,9 @@
+/**
+ * @author Lorenzo, Zazheska D.
+ * @param CCIS - CS 2nd Year
+ * @param A221 - Data Structures and Algorithms (Paired)
+ */
+
 public class TestLNode {
     public static void main(String args[]) {
         LNode node = new LNode();
