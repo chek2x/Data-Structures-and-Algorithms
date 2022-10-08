@@ -288,4 +288,88 @@ public class BinaryTree {
         }
         return "Full Binary Tree";
     }
+
+    public int height() {
+        double size = count();
+        int i;
+        if (isEmpty()) {
+            return 0;
+        }
+
+        for (i = 0; i < size; i++) {
+            if (Math.floor(size) != 0) {
+                size = size / Math.pow(2, i);
+            }
+        }
+
+        return i;
+    }
+
+    public int depth() {
+        return height();
+    }
+
+    public int level() {
+        return height();
+    }
+
+    public String printParents() {
+        return parents(root);
+    }
+
+    private String parents(Node node) {
+        String hold = "";
+        if (isEmpty()) {
+            hold = "Tree is empty";
+        } else {
+            Queue<Node> q = new LinkedList<Node>();
+            q.add(node);
+
+            while (!q.isEmpty()) {
+                Node newNode = q.poll();
+                if (newNode.getLeft() != null || newNode.getRight() != null) {
+                    hold += newNode.getData() + " ";
+                }
+                if (newNode.getLeft() != null) {
+                    q.add(newNode.getLeft());
+                }
+                if (newNode.getRight() != null) {
+                    q.add(newNode.getRight());
+                }
+            }
+        }
+        return hold;
+    }
+
+    public String printLeaves() {
+        return leaves(root);
+    }
+
+    private String leaves(Node node) {
+        String hold = "";
+        if (isEmpty()) {
+            hold = "Tree is empty";
+        } else {
+            Queue<Node> q = new LinkedList<Node>();
+            q.add(node);
+
+            while (!q.isEmpty()) {
+                Node newNode = q.poll();
+                if (newNode.getLeft() == null && newNode.getRight() == null) {
+                    hold += newNode.getData() + " ";
+                }
+                if (newNode.getLeft() != null) {
+                    q.add(newNode.getLeft());
+                }
+                if (newNode.getRight() != null) {
+                    q.add(newNode.getRight());
+                }
+            }
+        }
+        return hold;
+    }
+
+    public void clear() {
+        root = null;
+    }
 }

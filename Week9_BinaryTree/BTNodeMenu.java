@@ -62,13 +62,19 @@ public class BTNodeMenu extends JFrame implements ActionListener, ItemListener, 
         if (i == 0) {
             tree.addNode(value);
         } else if (i == 1) {
-
+            tree.deleteLast();
         } else if (i == 2) {
-
+            int toSearch = Integer.parseInt(txtValue.getText());
+            if (tree.search(toSearch) == true) {
+                JOptionPane.showMessageDialog(null, toSearch + " is in the tree.", "Search",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, toSearch + " is not found.", "Search", JOptionPane.ERROR_MESSAGE);
+            }
         } else if (i == 3) {
-
+            tree.clear();
         } else if (i == 4) {
-
+            System.exit(0);
         }
 
         display();
@@ -130,17 +136,17 @@ public class BTNodeMenu extends JFrame implements ActionListener, ItemListener, 
 
     void display() {
         traversal = "Level Order\t: " + tree.printLevelOrder() +
-                  "\nInorder\t: " + tree.printInOrder() +
-                  "\nPreorder\t: " + tree.printPreOrder() +
-                  "\nPostorder\t: " + tree.printPostOrder() +
-                  "\nInternal Nodes\t: " + tree.printParents() +
-                  "\nLeaves\t: " tree.printLeaves();
+                "\nInorder\t: " + tree.printInOrder() +
+                "\nPreorder\t: " + tree.printPreOrder() +
+                "\nPostorder\t: " + tree.printPostOrder() +
+                "\nInternal Nodes\t: " + tree.printParents() +
+                "\nLeaves\t: " + tree.printLeaves();
 
         txtAreaDown.setText(traversal);
 
         hold = "Empty\t: " + tree.isEmpty() + "\tCurrent Nodes\t: " + tree.count() +
-             "\nDepth\t: " + tree.depth() + "\tHeight\t: " + tree.height() +
-             "\nLevel\t: " + tree.level() + "\tType\t: " + tree.treeType();
+                "\nDepth\t: " + tree.depth() + "\tHeight\t: " + tree.height() +
+                "\nLevel\t: " + tree.level() + "\tType\t: " + tree.treeType();
 
         txtAreaUp.setText(hold);
     }

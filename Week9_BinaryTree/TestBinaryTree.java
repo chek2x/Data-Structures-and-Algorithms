@@ -38,7 +38,9 @@ public class TestBinaryTree {
         System.out.println("In Order\t: " + tree.printInOrder());
         System.out.println("Preorder\t: " + tree.printPreOrder());
         System.out.println("Postorder\t: " + tree.printPostOrder());
+        System.out.println("Height\t\t: " + tree.height());
 
+        tree.deleteLast();
         tree.deleteLast();
         tree.deleteLast();
         System.out.println("---After Deleting Last 2 Nodes---");
@@ -48,6 +50,7 @@ public class TestBinaryTree {
         System.out.println("In Order\t: " + tree.printInOrder());
         System.out.println("Preorder\t: " + tree.printPreOrder());
         System.out.println("Postorder\t: " + tree.printPostOrder());
+        System.out.println("Height\t\t: " + tree.height());
 
     }
 }
